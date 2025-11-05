@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Consulta por ID</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { margin: 0.5rem 0; padding: 0.5rem; }
+    #response { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Consultar información por ID</h1>
+
+  <label for="idInput">Ingrese ID:</label><br />
+  <input type="text" id="idInput" placeholder="Ej. 12345" /><br />
+  <button onclick="consultar()">Consultar</button>
+
+  <div id="response">Esperando consulta...</div>
+
+  <script>
+    async function consultar() {
+      const id = document.getElementById("idInput").value;
+      if (!id) {
+        document.getElementById("response").innerText = "Por favor ingrese un ID.";
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://servicio-backend:8080/api/info/${id}`);
+        if (!response.ok) throw new Error("Respuesta no válida");
+        const data = await response.json();
+        document.getElementById("response").innerText = data.message || JSON.stringify(data);
+      } catch (error) {
+        document.getElementById("response").innerText = "Error al consultar el microservicio.";
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
