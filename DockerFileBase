@@ -1,0 +1,3 @@
+FROM nginx:alpine
+
+RUN addgroup --system appgroup && adduser --system --group appuser
