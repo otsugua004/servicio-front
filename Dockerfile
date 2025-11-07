@@ -12,6 +12,9 @@ COPY nginx.conf /etc/nginx/conf.d/
 
 COPY public/ /usr/share/nginx/html
 
+RUN mkdir -p /var/cache/nginx/client_temp \
+    && chown -R nginx:nginx /var/cache/nginx
+
 EXPOSE 80
 
 # Inicia Nginx en modo foreground
