@@ -12,11 +12,17 @@ COPY nginx.conf /etc/nginx/conf.d/
 
 COPY public/ /usr/share/nginx/html
 
-RUN mkdir -p /var/cache/nginx/client_temp \
-    /var/cache/nginx/proxy_temp \
+# Crea todos los directorios temporales requeridos por Nginx
+RUN mkdir -p /var/cache/nginx \
+    /var/cache/nginx/client_temp \
     /var/cache/nginx/fastcgi_temp \
+    /var/cache/nginx/proxy_temp \
+    /var/cache/nginx/scgi_temp \
+    /var/cache/nginx/uwsgi_temp \
     && chown -R nginx:nginx /var/cache/nginx \
-    && chown -R nginx:nginx /var/cache/nginx
+    && chown -R nginx:nginx /usr/share/nginx/html
+
+
 
 # Cambia al usuario nginx para todas las instrucciones siguientes
 USER nginx
