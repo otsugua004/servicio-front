@@ -16,9 +16,6 @@ RUN mkdir -p /var/cache/nginx/client_temp \
     && mkdir -p /var/cache/nginx/proxy_temp \
     && chown -R nginx:nginx /var/cache/nginx
 
-RUN mkdir -p /var/cache/nginx/proxy_temp \
-    && chown -R nginx:nginx /var/cache/nginx \
-
 EXPOSE 80
 
 # Inicia Nginx en modo foreground
