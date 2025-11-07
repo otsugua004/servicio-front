@@ -1,8 +1,8 @@
 name: ci-servicio-front
 
-on: 
+on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:
 
 jobs:
@@ -37,40 +37,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Openshift CLI
-        run: |
-          curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz | tar xz
-          sudo mv oc /usr/local/bin/
-          oc version
-      - name: Install Helm
-        uses: azure/setup-helm@v3
-        with:
-          version: v3.12.0
-      - name: Log in Openshift
-        uses: redhat-actions/oc-login@v1
-        with:
-          openshift_server_url: https://api.rm2.thpm.p1.openshiftapps.com:6443
-          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
-      - name: Update Deployment tag
-        run: |
-          echo "Reemplazando {{ tag }} con ${{ github.run_number }}"
-          sed -i "s|{{ tag }}|${{ github.run_number }}|g" values.yaml
-          cat values.yaml
-
-      - name: Deploy files
-        run: |
-          oc project otsugua04-dev
-          helm show chart oci://registry-1.docker.io/otsugua04/servicio-chart --version 9
-          helm upgrade --install servicio-front oci://registry-1.docker.io/otsugua04/servicio-chart --version 9 --values values.yaml
