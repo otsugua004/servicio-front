@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ai.zencoder.plugin.chat.state-dedicated">
-    <option name="activeChatId" value="044b1a46-b9ed-4890-ad04-aec8c9f51d8b" />
-    <option name="chatSessions" value="{&quot;044b1a46-b9ed-4890-ad04-aec8c9f51d8b&quot;:{&quot;id&quot;:&quot;044b1a46-b9ed-4890-ad04-aec8c9f51d8b&quot;,&quot;createdAt&quot;:1762484388274,&quot;updatedAt&quot;:1762484388274,&quot;title&quot;:&quot;Build project info&quot;,&quot;messages&quot;:[{&quot;id&quot;:&quot;132ad856-fa87-4720-b7c2-826923767993&quot;,&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Build project info&quot;}],&quot;createdAt&quot;:1762484388274,&quot;isInternal&quot;:false,&quot;rawContent&quot;:{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Build project info&quot;}}],&quot;isAgent&quot;:false,&quot;isCustomAgent&quot;:true,&quot;selfDestruct&quot;:true}}" />
+    <option name="activeChatId" value="1fe5a268-5a07-41ba-9b2a-79d4bd88347d" />
+    <option name="chatSessions" value="{&quot;1fe5a268-5a07-41ba-9b2a-79d4bd88347d&quot;:{&quot;id&quot;:&quot;1fe5a268-5a07-41ba-9b2a-79d4bd88347d&quot;,&quot;createdAt&quot;:1762485939640,&quot;updatedAt&quot;:1762485939640,&quot;title&quot;:&quot;Build project info&quot;,&quot;messages&quot;:[{&quot;id&quot;:&quot;22e4522c-e9f3-45d8-9dcf-05021499d12a&quot;,&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Build project info&quot;}],&quot;createdAt&quot;:1762485939640,&quot;isInternal&quot;:false,&quot;rawContent&quot;:{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Build project info&quot;}}],&quot;isAgent&quot;:false,&quot;isCustomAgent&quot;:true,&quot;selfDestruct&quot;:true}}" />
   </component>
 </project>

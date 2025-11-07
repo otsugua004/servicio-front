@@ -1,4 +1,4 @@
-FROM otsugua004/alphine-nginx-base:latest
+FROM otsugua04/alphine-nginx-base:latest
 
 RUN chown -R appuser:appgroup /usr/share/nginx/html
 
