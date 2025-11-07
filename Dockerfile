@@ -13,8 +13,13 @@ COPY nginx.conf /etc/nginx/conf.d/
 COPY public/ /usr/share/nginx/html
 
 RUN mkdir -p /var/cache/nginx/client_temp \
-    && mkdir -p /var/cache/nginx/proxy_temp \
+    /var/cache/nginx/proxy_temp \
+    /var/cache/nginx/fastcgi_temp \
+    && chown -R nginx:nginx /var/cache/nginx \
     && chown -R nginx:nginx /var/cache/nginx
+
+# Cambia al usuario nginx para todas las instrucciones siguientes
+USER nginx
 
 EXPOSE 80
 
