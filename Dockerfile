@@ -22,11 +22,6 @@ RUN mkdir -p /var/cache/nginx \
     && chown -R nginx:nginx /var/cache/nginx \
     && chown -R nginx:nginx /usr/share/nginx/html
 
-
-
-# Cambia al usuario nginx para todas las instrucciones siguientes
-USER nginx
-
 EXPOSE 8080
 
 # Inicia Nginx en modo foreground
