@@ -27,7 +27,7 @@ RUN mkdir -p /var/cache/nginx \
 # Cambia al usuario nginx para todas las instrucciones siguientes
 USER nginx
 
-EXPOSE 80
+EXPOSE 8080
 
 # Inicia Nginx en modo foreground
 CMD ["nginx", "-g", "daemon off;"]
