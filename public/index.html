@@ -27,7 +27,7 @@
       }
 
       try {
-        const response = await fetch(`http://servicio-backend-service.otsugua04-dev.svc.cluster.local/api/info/${id}`);
+        const response = await fetch(`http://servicio-front-otsugua04-dev.apps.rm2.thpm.p1.openshiftapps.com/api/info/${id}`);
         if (!response.ok) throw new Error("Respuesta no válida");
         const data = await response.json();
         document.getElementById("response").innerText = data.message || JSON.stringify(data);
