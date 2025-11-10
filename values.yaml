@@ -24,3 +24,7 @@ hpa:
 
 configmap:
   servicio_backend_url: "http://servicio-backend-service.otsugua04-dev.svc.cluster.local/api/info/"
+  config.js: |
+    window.env = {
+      API_URL: "http://servicio-backend-service.otsugua04-dev.svc.cluster.local/api/info/"
+    };

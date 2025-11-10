@@ -71,5 +71,5 @@ jobs:
       - name: Deploy files
         run: |
           oc project otsugua04-dev
-          helm show chart oci://registry-1.docker.io/otsugua04/servicio-chart --version 9
-          helm upgrade --install servicio-front oci://registry-1.docker.io/otsugua04/servicio-chart --version 9 --values values.yaml
+          helm show chart oci://registry-1.docker.io/otsugua04/servicio-chart --version 17
+          helm upgrade --install servicio-front oci://registry-1.docker.io/otsugua04/servicio-chart --version 17 --values values.yaml
